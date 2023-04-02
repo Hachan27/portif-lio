@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap'); /*Fonte puxada do google fonts*/
+
+
+:root { /* tag para criar uma variavel dentro do css*/
+    --cor-primaria:  #2C3639; /*#000000;*/
+    --cor-secundaria: #DCD7C9;/*#F6F6F6;*/
+    --cor-terciaria: #A27B5C;/*#22D4FD;*/
+    --cor-hover: #3F4E4F; /*#272727;*/
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria:  'Montserrat', sans-serif;
+
+
+}
+
+*{ /*comando usado para resetar o css */
+    margin: 0;
+    padding: 0;
+}
+body {
+    /*height: 100vh;      a altura é 100 do view port. Toda a tela usada*/
+    box-sizing: border-box; /* indica que o tamanho agora levará em conta até a borda -- ou seja, o width será a soma do conteúdo com a borda e o padding.*/
+    background-color: var(--cor-primaria); /*a tag var puxa a variavel que eu criei lá em cima no root*/
+    color: var(--cor-secundaria);
+}
+.titulo-destaque {/*Quando vamos modificar uma class em css temos que usar a estrutura ponto + o nome atribuído à classe; Agora você já sabe que o atributo class permite ao CSS selecionar e acessar elementos específicos através dos seletores de classe*/
+    color: var(--cor-terciaria);
+}
+.apresentacao{
+    /*margin:10% 15%;*/
+    padding: 5% 15%;
+    display: flex;  /* or inline-flex Flex can build one dimension layout which is better than float based layout.  */
+    align-items: center; /*alinhar elementos no centro*/
+    justify-content: space-between; /*Separou cada elemento filho para um lado*/
+    gap: 82px;
+    
+}
+
+.apresentacao__conteudo{
+    width: 50%;/*615px; Tamanho da largura em px; em px é fixa então ela nao vai se adaptar em porcentagem rola a adaptacao */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;/*Diz o espacamento entre cada um dos elementos filhos*/
+
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem; /* originalmente estava em pixel 36px; mas vou colocar em rem para poder ter uma tel dinâmica em relacao ao tamanho da fonte setada pelo usuário*/
+    font-family: var(--fonte-primaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15% ;
+}
+
+.cabecalho__menu{
+
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    font-family: var(--fonte-secundaria);
+    font-size:  1.5rem; /*/24px;*/
+    font-weight: 600;
+    color:var(--cor-terciaria);
+    text-decoration: none;
+
+
+}
+
+.apresentacao__conteudo__texto{
+    font-size:  1.5rem; /*24px;*/
+    font-family: var(--fonte-secundaria);
+    text-decoration: none;
+   
+
+}
+
+
+
+.apresentacao__conteudo__texto a{ /*Mudanca no elemente especifico por isso tem o 'a' ali.*/
+    text-decoration: none;
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__links{
+    display: flex;/*Quando criamos um display flex o flexdirection é automaticamente colocado na posicao row*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+}
+
+.apresentacao__links__subtitulo{
+
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size:  1.5rem; /*24px;*/
+
+}
+
+.apresentacao__links__navegacao{
+    /* background-color: #22D4FD; */
+    display: flex;
+    justify-content: center; /*Aqui usei para colocar os elementos no centro*/
+    gap: 16px; /*Usei o gap para poder separar a imagem do texto*/
+    border: 2px solid #22D4FD;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px; /*A border-radiuspropriedade define o raio dos cantos do elemento. Dica: Esta propriedade permite adicionar cantos arredondados aos elementos! */
+    font-size:  1.5rem; /*24px;*/
+    font-weight: 600;/*Peso da fonte*/
+    padding: 21.5px 0px; /*As paddingpropriedades CSS são usadas para gerar espaço ao redor do conteúdo de um elemento, dentro de qualquer borda definida.*/
+    color:  #F6F6F6;
+    text-decoration: none; /*A text-decorationpropriedade especifica a decoração adicionada ao texto e é uma propriedade*/
+    font-family: var(--fonte-secundaria); /*A font-familypropriedade especifica a fonte de um elemento.*/
+
+}
+
+.apresentacao__links__link:hover{ /* nao tem espaco no hover, pode usar com tg ou classe, aqui to colocando o que vai acontecer quando eu passar o maouse nos botoes*/
+
+    background-color: var(--cor-hover);
+    padding: 3%; /*o padding de 3 porcento dá uma cara de botao no mmoneto do hover*/
+}
+.apresentacao__links__subtitulo:hover{
+    color:#22D4FD;
+}
+
+.apresentacao__imagem{
+    width: 50%;
+}
+
+.rodape{
+    padding: 24px;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size:  1.5rem; /*24px*/;
+    font-weight: 400;
+
+}
+@media (max-width: 1200px){ /* Comecando aqui eu estou usando @media para resolver o problema de responsividade do site. Media meio que trabalho com condicoes. Em baixo eu coloquei as mudanças que irão ocorrer caso esteja dentro do que foi declarado no @media*/
+
+    .cabecalho{
+        padding: 10%;
+        
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+        
+    }
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+        
+    }
+    .apresentacao__conteudo{
+        width:auto;
+        
+    }
+
+}
