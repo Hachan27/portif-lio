@@ -162,5 +162,8 @@ body {
         width:auto;
         padding: 5%;
     }
+    .apresentacao__foto{
+        width:50%;
+    }
 
 }
